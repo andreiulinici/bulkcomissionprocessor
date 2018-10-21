@@ -7,9 +7,9 @@ export class TaskCollectionService {
 
   path = 'http://localhost:3000/tasks-collections';
 
-  constructor(private http: HttpClient) { }
+  constructor(private _http: HttpClient) { }
 
   getTasksCollections() {
-    return this.http.get<TaskCollection[]>(this.path);
+    return this._http.get<TaskCollection[]>(this.path);
   }
 }

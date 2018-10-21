@@ -9,13 +9,12 @@ export class TasksComponent implements OnInit {
 
   tasksCollections: TaskCollection[];
 
-  constructor(private taskCollectionService: TaskCollectionService) {
+  constructor(private _taskCollectionService: TaskCollectionService) {
   }
 
   ngOnInit(): void {
-    this.taskCollectionService.getTasksCollections().subscribe(res => {
+    this._taskCollectionService.getTasksCollections().subscribe(res => {
       this.tasksCollections = res;
-      console.log(this.tasksCollections);
     });
   }
 }
